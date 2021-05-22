@@ -19,7 +19,6 @@ package com.example.android.databinding.basicsample.data
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-
 class ProfileObservableViewModelTest {
 
     private val viewmodel = ProfileObservableViewModel()

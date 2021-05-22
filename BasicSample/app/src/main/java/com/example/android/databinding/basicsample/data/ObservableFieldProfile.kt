@@ -23,7 +23,7 @@ import androidx.databinding.ObservableInt
  * one (likes).
  */
 data class ObservableFieldProfile(
-        val name: String,
-        val lastName: String,
-        val likes: ObservableInt
+    val name: String,
+    val lastName: String,
+    val likes: ObservableInt
 )

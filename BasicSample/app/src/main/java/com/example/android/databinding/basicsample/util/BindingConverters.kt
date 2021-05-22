@@ -29,7 +29,8 @@ import android.view.View
  * from Boolean to a visibility integer.
  */
 object ConverterUtil {
-    @JvmStatic fun isZero(number: Int): Boolean {
+    @JvmStatic
+    fun isZero(number: Int): Boolean {
         return number == 0
     }
 }
@@ -41,11 +42,11 @@ object ConverterUtil {
  * There is no need to specify that this converter should be used. [BindingConversion]s are
  * applied automatically.
  */
-object BindingConverters{
+object BindingConverters {
 
     @BindingConversion
-    @JvmStatic fun booleanToVisibility(isNotVisible: Boolean): Int {
+    @JvmStatic
+    fun booleanToVisibility(isNotVisible: Boolean): Int {
         return if (isNotVisible) View.GONE else View.VISIBLE
     }
 }
-

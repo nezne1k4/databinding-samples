@@ -29,14 +29,14 @@ import android.widget.ProgressBar
 import com.example.android.databinding.basicsample.R
 import com.example.android.databinding.basicsample.data.Popularity
 
-
 object BindingAdapters {
     /**
      * A Binding Adapter that is called whenever the value of the attribute `app:popularityIcon`
      * changes. Receives a popularity level that determines the icon and tint color to use.
      */
     @BindingAdapter("app:popularityIcon")
-    @JvmStatic fun popularityIcon(view: ImageView, popularity: Popularity) {
+    @JvmStatic
+    fun popularityIcon(view: ImageView, popularity: Popularity) {
 
         val color = getAssociatedColor(popularity, view.context)
 
@@ -50,7 +50,8 @@ object BindingAdapters {
      * changes. Depending on the value it determines the color of the progress bar.
      */
     @BindingAdapter("app:progressTint")
-    @JvmStatic fun tintPopularity(view: ProgressBar, popularity: Popularity) {
+    @JvmStatic
+    fun tintPopularity(view: ProgressBar, popularity: Popularity) {
 
         val color = getAssociatedColor(popularity, view.context)
 
@@ -66,7 +67,8 @@ object BindingAdapters {
      *  whenever any of the attribute changes.
      */
     @BindingAdapter(value = ["app:progressScaled", "android:max"], requireAll = true)
-    @JvmStatic fun setProgress(progressBar: ProgressBar, likes: Int, max: Int) {
+    @JvmStatic
+    fun setProgress(progressBar: ProgressBar, likes: Int, max: Int) {
         progressBar.progress = (likes * max / 5).coerceAtMost(max)
     }
 
@@ -75,14 +77,16 @@ object BindingAdapters {
      * of likes is zero.
      */
     @BindingAdapter("app:hideIfZero")
-    @JvmStatic fun hideIfZero(view: View, number: Int) {
+    @JvmStatic
+    fun hideIfZero(view: View, number: Int) {
         view.visibility = if (number == 0) View.GONE else View.VISIBLE
     }
 
     private fun getAssociatedColor(popularity: Popularity, context: Context): Int {
         return when (popularity) {
             Popularity.NORMAL -> context.theme.obtainStyledAttributes(
-                    intArrayOf(android.R.attr.colorForeground)).getColor(0, 0x000000)
+                intArrayOf(android.R.attr.colorForeground)
+            ).getColor(0, 0x000000)
             Popularity.POPULAR -> ContextCompat.getColor(context, R.color.popular)
             Popularity.STAR -> ContextCompat.getColor(context, R.color.star)
         }

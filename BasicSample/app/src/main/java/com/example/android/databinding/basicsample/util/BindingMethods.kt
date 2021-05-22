@@ -20,7 +20,6 @@ import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import android.widget.ImageView
 
-
 /**
  * `app:srcCompat` is an attribute used by the support library to integrate vector drawables. This
  * BindingMethod binds the attribute to the setImageDrawable method in the ImageView class.
@@ -37,7 +36,10 @@ import android.widget.ImageView
  * ```
  */
 @BindingMethods(
-        BindingMethod(type = ImageView::class,
-                attribute = "app:srcCompat",
-                method = "setImageResource"))
+    BindingMethod(
+        type = ImageView::class,
+        attribute = "app:srcCompat",
+        method = "setImageResource"
+    )
+)
 class MyBindingMethods

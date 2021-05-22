@@ -21,7 +21,6 @@ import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.databinding.PropertyChangeRegistry
 
-
 /**
  * A ViewModel that is also an Observable, to be used with Data Binding.
  */

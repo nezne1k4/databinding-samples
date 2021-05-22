@@ -26,7 +26,6 @@ import androidx.lifecycle.ViewModel
 import com.example.android.databinding.basicsample.BR
 import com.example.android.databinding.basicsample.util.ObservableViewModel
 
-
 /**
  * This class is used as a variable in the XML layout and it's fully observable, meaning that
  * changes to any of the exposed observables automatically refresh the UI. *
@@ -34,7 +33,7 @@ import com.example.android.databinding.basicsample.util.ObservableViewModel
 class ProfileLiveDataViewModel : ViewModel() {
     private val _name = MutableLiveData("Ada")
     private val _lastName = MutableLiveData("Lovelace")
-    private val _likes =  MutableLiveData(0)
+    private val _likes = MutableLiveData(0)
 
     val name: LiveData<String> = _name
     val lastName: LiveData<String> = _lastName
@@ -63,7 +62,7 @@ class ProfileLiveDataViewModel : ViewModel() {
 class ProfileObservableViewModel : ObservableViewModel() {
     val name = ObservableField("Ada")
     val lastName = ObservableField("Lovelace")
-    val likes =  ObservableInt(0)
+    val likes = ObservableInt(0)
 
     fun onLike() {
         likes.increment()
